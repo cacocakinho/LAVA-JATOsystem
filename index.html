@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Lava Jato Brilho Rápido</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🧼 Brilho Rápido - Controle de Fluxo</h1>
+        
+        <div class="form-group">
+            <input type="text" id="cliente" placeholder="Nome do Cliente">
+            <select id="servico">
+                <option value="">Selecione o Serviço</option>
+                <option value="Simples">Lavagem Simples</option>
+                <option value="Completa">Lavagem Completa</option>
+                <option value="Com Cera">Lavagem com Cera</option>
+            </select>
+            <button onclick="adicionarCarro()">Cadastrar</button>
+        </div>
+
+        <h3>Atendimentos do Dia: <span id="total">0</span></h3>
+        <ul id="listaCarros"></ul>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
