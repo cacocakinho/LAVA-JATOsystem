@@ -1,0 +1,130 @@
+/* ============================================================
+   1. VARIÁVEIS E CONFIGURAÇÕES GERAIS
+   ============================================================ */
+:root {
+    --primary-color: #3498db;    /* Azul para o sistema */
+    --success-color: #2ecc71;    /* Verde para conclusão */
+    --danger-color: #e74c3c;     /* Vermelho para remoção */
+    --bg-color: #f4f7f6;         /* Cinza clarinho de fundo */
+    --text-color: #2c3e50;       /* Cor da fonte principal */
+    --white: #ffffff;
+    --radius: 8px;               /* Arredondamento padrão */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que padding não aumente o tamanho do elemento */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* ============================================================
+   2. LAYOUT DO CONTAINER
+   ============================================================ */
+.container {
+    background-color: var(--white);
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+    border-radius: var(--radius);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+/* ============================================================
+   3. FORMULÁRIO DE ENTRADA
+   ============================================================ */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 2rem;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: var(--primary-color); /* Realce quando clica */
+}
+
+.btn-cadastrar {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: var(--radius);
+    font-weight: bold;
+    cursor: pointer;
+    transition: filter 0.3s;
+}
+
+.btn-cadastrar:hover {
+    filter: brightness(0.9); /* Escurece um pouco no hover */
+}
+
+/* ============================================================
+   4. LISTA DE ATENDIMENTOS (DINÂMICA)
+   ============================================================ */
+h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 5px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    background: #fafafa;
+    margin-bottom: 10px;
+    padding: 12px;
+    border-radius: var(--radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 4px solid var(--primary-color);
+    animation: fadeIn 0.4s ease-in-out; /* Efeito de entrada */
+}
+
+.btn-concluir {
+    background-color: var(--success-color);
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+}
+
+.btn-concluir:hover {
+    background-color: #27ae60;
+}
+
+/* Animação simples para novos itens na lista */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
